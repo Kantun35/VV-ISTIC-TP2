@@ -19,6 +19,7 @@ class VVex1
   int B
   int C
   int D
+  int E
 
   method 1 :
     some code using A
@@ -30,10 +31,12 @@ class VVex1
 
   method 3 :
     some code using C
-
+    some code using E
+    
   method 4 :
     some code using B
     some code using D
+    some code using E
 
   (mx = method x)
   (nb = methods count)
@@ -43,16 +46,16 @@ class VVex1
     m1 & m4 : nothing  :  +0
     m2 & m3 : nothing  :  +0
     m2 & m4 : B,D      :  +1
-    m3 & m4 : nothing  :  +0
-    counter = 2 
-    TCC = counter/nb = 2/4 = 0.5
+    m3 & m4 : E        :  +1
+    counter = 3 
+    TCC = counter/nb = 3/4 = 0.75
     
   Calcul LCC
-    m1 & m2 :   :  +0
-    m1 & m3 :         :  +1
-    m1 & m4 :   :  +0
-    m2 & m3 :   :  +0
-    m2 & m4 :      :  +1
-    m3 & m4 :  :  +0
-    counter =  
-    LCC = counter/nb =  = 
+    m1 & m2 : nothing  : m1->m3->m4->m2  : +1
+    m1 & m3 : C        : m1->m3          : +1
+    m1 & m4 : nothing  : m1->m3->m4      : +1
+    m2 & m3 : nothing  : m2->m4->m3      : +1
+    m2 & m4 : B,D      : m2->m4          : +1
+    m3 & m4 : E        : m3->m4          : +1
+    counter =  6
+    LCC = counter/nb = 6/4 = 1.5
