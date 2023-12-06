@@ -13,6 +13,7 @@ then you will increment a counter by one. when you tested all the methods. you d
 
 LCC : LCC work almost the same except that the link doesn't need to be direct it can be indirect. At the end you divide the number of pairs by the counter.
 
+```
 class VVex1
 
   int A
@@ -59,3 +60,4 @@ class VVex1
     m3 & m4 : E        : m3->m4          : +1
     counter =  6
     LCC = counter/nb = 6/4 = 1.5
+```
